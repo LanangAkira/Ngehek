@@ -182,15 +182,15 @@ def ___mengikuti___():
         exit("%s[%s!%s]%s User Tidak Ditemukan"%(P,M,P,M))
     try:
         __sep = ses.get('https://i.instagram.com/api/v1/friendships/'+__res['id']+'/following/?count=5000', headers=___head)
-        ___file = open('Dump/'+___nama, 'w')
+        ___file = open('Get/'+___nama, 'w')
         for z in json.loads(__sep.text)["users"]:
             ___file.write(z['username']+'<=>'+z['full_name']+'  \n')
             print("\r"+z['username']+"<=>"+z['full_name'])
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -213,15 +213,15 @@ def ___pengikut___():
         exit("%s[%s!%s]%s User Tidak Ditemukan"%(P,M,P,M))
     try:
         __sep = ses.get('https://i.instagram.com/api/v1/friendships/'+__res['id']+'/followers/?count=5000', headers=___head)
-        ___file = open('Dump/'+___nama, 'w')
+        ___file = open('Get/'+___nama, 'w')
         for z in json.loads(__sep.text)["users"]:
             ___file.write(z['username']+'<=>'+z['full_name']+'  \n')
             print("\r"+z['username']+"<=>"+z['full_name'])
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -243,15 +243,15 @@ def ___beranda___():
         exit("%s[%s!%s]%s User Tidak Ditemukan"%(P,M,P,M))
     try:
         __sep = ses.get("https://i.instagram.com/api/v1/feed/reels_tray/", headers=___head).json()
-        ___file = open('Dump/'+___nama, 'w')
+        ___file = open('Get/'+___nama, 'w')
         for z in __sep['tray']:
             ___file.write(z['user']['username']+'<=>'+z['user']['full_name']+'  \n')
             print("\r"+z['user']['username']+"<=>"+z['user']['full_name'])
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -265,7 +265,7 @@ def ___hastag___():
         ___tag___ = input("\n%s[%s?%s]%s Hastag :%s "%(B,P,B,P,H)).replace('#','')
         ___nama = input("%s[%s?%s]%s File :%s "%(B,P,B,P,H))
         __sep = ses.get('https://i.instagram.com/api/v1/feed/tag/'+___tag___+'/?rank_token=caf8d67a-5140-4fcd-a795-e2a9047dc5d9', headers=___head).json()
-        ___file = open('Dump/'+___nama, 'w')
+        ___file = open('Get/'+___nama, 'w')
         print("%s   "%(P))
         for z in __sep['ranked_items']:
             ___file.write(z['user']['username']+'<=>'+z['user']['full_name']+'  \n')
@@ -273,8 +273,8 @@ def ___hastag___():
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -293,15 +293,15 @@ def ___search___():
         print("%s[%s?%s]%s Nama :%s %s"%(B,P,B,P,H,__res['full_name']))
         print("%s   "%(P))
         __sep = ses.get('https://i.instagram.com/api/v1/fbsearch/accounts_recs/?target_user_id='+__res['id']+'&include_friendship_status=true',headers=___head).json()
-        ___file = open('Dump/'+___nama, 'w')
+        ___file = open('Get/'+___nama, 'w')
         for z in __sep['users']:
             ___file.write(z['username']+'<=>'+z['full_name']+'  \n')
             print("\r"+z['username']+"<=>"+z['full_name'])
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -315,7 +315,7 @@ def ___query___():
         ___nama = input("\n%s[%s?%s]%s Query :%s "%(B,P,B,P,H)).replace(' ','')
         ___limit___ = input("%s[%s?%s]%s Limit :%s "%(B,P,B,P,H))
         __sep = ses.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+___nama+'&rank_token=0.3953592318270893&count='+___limit___, headers=___head).json()
-        ___file = open('Dump/'+___nama+'.txt', 'w')
+        ___file = open('Get/'+___nama+'.txt', 'w')
         print("%s   "%(P))
         for z in __sep['users']:
             ___file.write(z['user']['username']+'<=>'+z['user']['full_name']+'  \n')
@@ -323,8 +323,8 @@ def ___query___():
         ___file.close()
         print("\r%s                   "%(P))
         print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama+'.txt','r').readlines())))
-        print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama+'.txt'))
+        print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama+'.txt','r').readlines())))
+        print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama+'.txt'))
         input("%s[%sKembali%s]"%(K,P,K));___menu___()
     except (KeyError):
         exit("%s[%s!%s]%s Dump Gagal"%(P,M,P,M))
@@ -341,7 +341,7 @@ def ___email___():
         ___email___ = input("%s[%s?%s]%s Domain :%s "%(B,P,B,P,H))
         print("%s   "%(P))
         if ___email___ in ['@gmail.com','@yahoo.com','@hotmail.com','@email.com','@mail.com','@outlook.com','@yandex.com']:
-            ___file = open('Dump/'+___nama, 'w')
+            ___file = open('Get/'+___nama, 'w')
             for z in range(___limit___):
                 ___nomor = random.randint(1, 999)
                 email___ = ___user___+str(___nomor)+___email___+'<=>'+___user___+' '+str(___nomor)+'  '
@@ -350,8 +350,8 @@ def ___email___():
             ___file.close()
             print("\r%s                   "%(P))
             print("%s[%s*%s]%s Selesai..."%(H,P,H,P))
-            print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Dump/'+___nama,'r').readlines())))
-            print("%s[%s?%s]%s File Tersimpan Di :%s Dump/%s"%(H,P,H,P,K,___nama))
+            print("%s[%s?%s]%s Total User :%s %s"%(H,P,H,P,K,len(open('Get/'+___nama,'r').readlines())))
+            print("%s[%s?%s]%s File Tersimpan Di :%s Get/%s"%(H,P,H,P,K,___nama))
             input("%s[%sKembali%s]"%(K,P,K));___menu___()
         else:
             exit("%s[%s!%s]%s Domain : @gmail.com,@yahoo.com,@hotmail.com,@email.com,@mail.com,@outlok.com,@yandex.com"%(P,M,P,M))
