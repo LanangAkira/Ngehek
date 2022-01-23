@@ -11,7 +11,7 @@ cp = []
 # Warna
 H = ('\x1b[1;90m')
 M = ('\x1b[1;91m')
-H = ('\x1b[1;92m')                                                        
+H = ('\x1b[1;92m')
 K = ('\x1b[1;93m')
 T = ('\x1b[1;94m')
 U = ('\x1b[1;95m')
@@ -19,11 +19,11 @@ B = ('\x1b[1;96m')
 P = ('\x1b[1;97m')
 
 # Logo
-___logo___ = ("""%s       Created by : rozhak Modified By L4N4N9_4K1R4
-%s ___ ___ ___ __  __ ___ _   _ __  __
-%s| _ \ _ \ __|  \/  |_ _| | | |  \/  |
-%s|  _/   / _|| |\/| || || |_| | |\/| |
-%s|_| |_|_\___|_|  |_|___|\___/|_|  |_| Modified By L4N4N9_4K1R4"""%(P,B,B,H,H))
+___logo___ = ("""%s       L4N4N9_4K1R4
+%s __ _   ___  ____  _  _  ____  __ _ 
+%s(  ( \ / __)(  __)/ )( \(  __)(  / )
+%s/    /( (_ \ ) _) ) __ ( ) _)  )  ( 
+%s\_)__) \___/(____)\_)(_/(____)(__\_)"""%(P,B,B,H,H))
 # Proxy
 try:
     __res = requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=10000&country=all&ssl=all&anonymity=all').text
@@ -37,12 +37,12 @@ ses = Session()
 def ___login___():
     os.system('clear')
     print(___logo___)
-    print("\n%s[%s!%s]%s Anda Harus Memasukan Cookie Instagram, Sebaiknya Gunakan Akun Tumbal Untuk Login, Wajib Gunakan Akun Tumbal Agar Akun utama Anda Aman!\n"%(M,H,M,H))
+    print("\n%s[%s!%s]%s Anda Harus Memasukan Cookie Instagram, Sebaiknya Gunakan Akun Tumbal Untuk Login, Jika Anda Belum Tau Cara Mendapatkan Cookie Ketik {Open}\n"%(M,H,M,H))
     try:
         ___cookie___ = input("%s[%s?%s]%s Cookie :%s "%(B,P,B,P,K))
         if ___cookie___ in ['open','Open']:
-            print("%s[%s!%s]%s Anda Akan Diarahkan Ke "%(M,H,M,H))
-            os.system("xdg-open https://anonsec-team.org");exit()
+            print("%s[%s!%s]%s Anda Akan Diarahkan Ke Youtube"%(M,H,M,H))
+            os.system("xdg-open https://anonsec-team.org/");exit()
         ___head = {'user-agent': 'Mozilla/5.0 (Linux; Android 7.0; Lenovo K33b36 Build/NRD90N; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/65.0.3325.109 Mobile Safari/537.36 Instagram 41.0.0.13.92 Android (24/7.0; 480dpi; 1080x1920; LENOVO/Lenovo; Lenovo K33b36; K33b36; qcom; pt_BR; 103516666)','cookie': ___cookie___}
         ___vps = ___cookie___.split('ds_user_id=')[1];___user___ = ___vps.split(';')[0]
         open('Data/user.txt','w').write(___user___)
@@ -53,7 +53,7 @@ def ___login___():
     except (KeyError):
         exit("%s[%s!%s]%s Cookie Invalid"%(P,M,P,M))
     except (ValueError):
-        exit("%s[%s!%s]%s Cookie Instagram Tidak Bisa Digunakan Harap Ganti Dengan Akun Tumbal yang Lain"%(P,M,P,M))
+        exit("%s[%s!%s]%s Cookie Instagram Tidak Bisa Digunakan Harap Ganti Dengan Akun Lain"%(P,M,P,M))
     except (IndexError):
         exit("%s[%s!%s]%s Cookie Error Tidak Ada {ds_user_id=}"%(P,M,P,M))
     except (ConnectionError):
@@ -158,7 +158,7 @@ def ___menu___():
             exit("%s[%s!%s]%s Wrong Input"%(P,M,P,M))
     elif ___menu___ in ['a','A']:
         print("\n%s[%s!%s]%s Anda Akan Diarahkan Ke Facebook Atau Browser!"%(M,H,M,H))
-        os.system("xdg-open https://anonsec-team.org");exit()
+        os.system("xdg-open https://anonsec-team.org/");exit()
         exit("%s[%s?%s]%s Ketik {python hek.py}"%(P,H,P,H))
     elif ___menu___ in ['0','00']:
         os.system('rm -rf Cookie.txt')
@@ -470,7 +470,7 @@ def ___crack___(total,user,pwx):
                 continue
             elif 'Please wait' in str(req):
                 sys.stdout.write(
-                    "\r%s[%s!%s]%s Gunakan Mode Pesawat Otomatis Selama 2 Detik"%(P,M,P,M)),
+                    "\r%s[%s!%s]%s Gunakan Mode Pesawat 2 Detik"%(P,M,P,M)),
                 sys.stdout.flush();sleep(7)
                 ___crack___(total,user,pwx)
             else:
